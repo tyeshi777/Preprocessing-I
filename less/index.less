@@ -172,6 +172,12 @@ body {
   margin: 0 20px;
 }
 
+@media @mobile {
+  .container {
+    max-width: 480px;
+    margin: 0 20px;
+  }
+}
 header {
   .custom-layout(flex-end, center);
   margin-top: 20px;
@@ -189,15 +195,22 @@ header {
     cursor: pointer;
   }
   @media @mobile {
-    width: 500px;
+    max-width: 480px;
     margin-top: 10px;
     a {
-      margin-left: 10px;
       text-decoration: none;
       color: @blackRock;
     }
     a:last-child {
-      margin-right: 10px;
+      padding-right: 50px;
+    }
+    a:hover {
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+      background: @burntMaroon;
+      color: white;
+      cursor: pointer;
     }
   }
 }
@@ -214,9 +227,12 @@ header {
   .content-section p {
     color: @deepKomaru;
   }
+  strong {
+    color: @electricViolet;
+  }
   .content-h1 {
     font-size: 30px;
-    color: @cornflowerBlue;
+    color: @burntMaroon;
   }
   .content-button-section {
     border-top: 1px dashed black;
@@ -237,7 +253,7 @@ header {
     cursor: pointer;
   }
   @media @mobile {
-    width: 500px;
+    max-width: 480px;
     max-width: 90%;
     .custom-column(column, center);
     margin-top: 20px;
@@ -288,11 +304,14 @@ header {
     border-top: 1px solid black;
   }
   @media @mobile {
-    width: 500px;
+    max-width: 480px;
     .custom-column(column, center);
     line-height: 18px;
     section {
       width: 90%;
+    }
+    .main-content-ul {
+      margin-left: 0;
     }
   }
 }
@@ -323,10 +342,13 @@ header {
     padding: 3px;
   }
   @media @mobile {
-    width: 500px;
+    max-width: 480px;
     line-height: 18px;
     margin-bottom: 20px;
     .custom-column(column, center);
+    table {
+      max-width: 420px;
+    }
   }
 }
 
@@ -335,7 +357,7 @@ footer {
   margin-bottom: 20px;
   color: @electricViolet;
   @media @mobile {
-    width: 500px;
+    max-width: 480px;
     margin-bottom: 20px;
   }
 }
