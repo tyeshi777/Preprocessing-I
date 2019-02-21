@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+	v2.0 | 20110126
+	License: none (public domain)
 */
 html,
 body,
@@ -149,14 +149,26 @@ header a {
   text-decoration: none;
   color: #09033a;
 }
+header a:hover {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background: #3a0314;
+  color: white;
+  cursor: pointer;
+}
 @media (max-width: 500px) {
   header {
+    width: 500px;
     margin-top: 10px;
   }
   header a {
     margin-left: 10px;
     text-decoration: none;
     color: #09033a;
+  }
+  header a:last-child {
+    margin-right: 10px;
   }
 }
 .content {
@@ -199,21 +211,34 @@ header a {
 }
 @media (max-width: 500px) {
   .content {
+    width: 500px;
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     margin-top: 20px;
     background: #d7e0fe;
     padding: 20px;
   }
   .content .content-section {
     padding-top: 10px;
-    line-height: 18px;
+    line-height: 25px;
   }
   .content .content-h1 {
     font-size: 20px;
     color: #6195ed;
+  }
+  .content .content-button-section {
+    line-height: 20px;
+    padding-top: 20px;
+  }
+  .content .content-button-section input {
+    margin-top: 10px;
+    padding: 10px 50px;
+    border-radius: 10px;
+    background: #11456a;
+    color: white;
+    font-size: 18px;
   }
 }
 .main-content {
@@ -230,21 +255,25 @@ header a {
   padding-left: 0;
 }
 .main-content .main-content-ul {
-  margin-left: 10px;
+  margin-left: 100px;
 }
 .main-content .main-content-ul li {
-  border-bottom: 1px solid black;
   border: 1px solid black;
+  padding: 4px;
 }
 .main-content .main-content-ul li:first-child {
   border-top: 1px solid black;
 }
 @media (max-width: 500px) {
   .main-content {
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     line-height: 18px;
+  }
+  .main-content section {
+    width: 90%;
   }
 }
 .bottom-content {
@@ -259,17 +288,26 @@ header a {
 }
 .bottom-content h2 {
   color: #6195ed;
+  padding-bottom: 20px;
+  text-align: left;
 }
-.bottom-content .bottom-p-1 {
-  color: #ba00fa;
-  font-size: 20px;
+.bottom-content table {
+  width: 800px;
+  padding-top: 20px;
 }
-.bottom-content .bottom-p-2 {
-  color: #00fa9b;
-  font-size: 20px;
+.bottom-content th {
+  text-align: center;
+  border: 1px solid black;
+  padding: 3px;
+}
+.bottom-content td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 3px;
 }
 @media (max-width: 500px) {
   .bottom-content {
+    width: 500px;
     line-height: 18px;
     margin-bottom: 20px;
     display: flex;
@@ -279,4 +317,12 @@ header a {
 }
 footer {
   text-align: center;
+  margin-bottom: 20px;
+  color: #ba00fa;
+}
+@media (max-width: 500px) {
+  footer {
+    width: 500px;
+    margin-bottom: 20px;
+  }
 }

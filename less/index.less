@@ -1,7 +1,7 @@
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+	v2.0 | 20110126
+	License: none (public domain)
 */
 
 html,
@@ -141,6 +141,10 @@ table {
 @electricViolet: #ba00fa;
 @springGreen: #00fa9b;
 
+// escaping
+
+@mobile: (max-width: 500px);
+
 // mixin
 
 .custom-layout(@justify, @align) {
@@ -155,10 +159,6 @@ table {
   align-items: @align;
 }
 
-// escaping
-
-@mobile: (max-width: 500px);
-
 * {
   box-sizing: border-box;
 }
@@ -171,6 +171,7 @@ body {
   width: 800px;
   margin: 0 20px;
 }
+
 header {
   .custom-layout(flex-end, center);
   margin-top: 20px;
@@ -179,13 +180,24 @@ header {
     text-decoration: none;
     color: @blackRock;
   }
+  a:hover {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background: @burntMaroon;
+    color: white;
+    cursor: pointer;
+  }
   @media @mobile {
-		margin-top: 10px;
-		width: 500px;
+    width: 500px;
+    margin-top: 10px;
     a {
       margin-left: 10px;
       text-decoration: none;
       color: @blackRock;
+    }
+    a:last-child {
+      margin-right: 10px;
     }
   }
 }
@@ -225,35 +237,34 @@ header {
     cursor: pointer;
   }
   @media @mobile {
-		width: 500px;
-		max-width: 90%;
+    width: 500px;
+    max-width: 90%;
     .custom-column(column, center);
-    width: 100%;
     margin-top: 20px;
     background: @hawkesBlue;
     padding: 20px;
     .content-section {
       padding-top: 10px;
-      line-height: 18px;
+      line-height: 25px;
     }
     .content-h1 {
       font-size: 20px;
       color: @cornflowerBlue;
-		}
-		.content-button-section {
-    line-height: 20px;
-    padding-top: 20px;
-	}
-	.content-button-section input {
-    margin-top: 10px;
-    padding: 10px 50px;
-    border-radius: 10px;
-    background: @chathamsBlue;
-    color: white;
-    font-size: 18px;
+    }
+    .content-button-section {
+      line-height: 20px;
+      padding-top: 20px;
+    }
+    .content-button-section input {
+      margin-top: 10px;
+      padding: 10px 50px;
+      border-radius: 10px;
+      background: @chathamsBlue;
+      color: white;
+      font-size: 18px;
+    }
   }
 }
-
 .main-content {
   display: flex;
   line-height: 22px;
@@ -267,18 +278,22 @@ header {
     padding-left: 0;
   }
   .main-content-ul {
-    margin-left: 10px;
+    margin-left: 100px;
   }
   .main-content-ul li {
-    border-bottom: 1px solid black;
     border: 1px solid black;
+    padding: 4px;
   }
   .main-content-ul li:first-child {
     border-top: 1px solid black;
   }
   @media @mobile {
+    width: 500px;
     .custom-column(column, center);
     line-height: 18px;
+    section {
+      width: 90%;
+    }
   }
 }
 .bottom-content {
@@ -290,16 +305,25 @@ header {
   }
   h2 {
     color: @cornflowerBlue;
+    padding-bottom: 20px;
+    text-align: left;
   }
-  .bottom-p-1 {
-    color: @electricViolet;
-    font-size: 20px;
+  table {
+    width: 800px;
+    padding-top: 20px;
   }
-  .bottom-p-2 {
-    color: @springGreen;
-    font-size: 20px;
+  th {
+    text-align: center;
+    border: 1px solid black;
+    padding: 3px;
+  }
+  td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
   }
   @media @mobile {
+    width: 500px;
     line-height: 18px;
     margin-bottom: 20px;
     .custom-column(column, center);
@@ -308,4 +332,10 @@ header {
 
 footer {
   text-align: center;
+  margin-bottom: 20px;
+  color: @electricViolet;
+  @media @mobile {
+    width: 500px;
+    margin-bottom: 20px;
+  }
 }
